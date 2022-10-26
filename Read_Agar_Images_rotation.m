@@ -106,3 +106,14 @@ xlim([0 180]);ylim([-.15 .15]);
 grid on;box on;pbaspect([1 1 1])
 ylabel('Normalized cellular fluorescence (a.u.)','FontSize',16,'FontName','Arial')
 xlabel('Filter angle (degrees)','FontSize',16,'FontName','Arial')
+
+for i = 1:9
+    scatter(xvar+angles(i),all_ch2(i,:),15,'^','MarkerEdgeColor','none','MarkerFaceColor',c2,'MarkerFaceAlpha',.5)
+end
+plot(x,y2,'Color','k','LineWidth',1)
+scatter([find(y2==min(y2)) find(y2==max(y2))],[min(y2) max(y2)],50,'k','v','MarkerFaceColor',c2)
+set(gca,'FontSize',16,'FontName','Arial','LineWidth',2,'XTick',[0:45:180],'YTick',[-.15:.05:.15]);
+xlim([0 180]);ylim([-.15 .15]);
+grid on;box on;pbaspect([1 1 1])
+ylabel('Normalized cellular fluorescence (a.u.)','FontSize',16,'FontName','Arial')
+xlabel('Filter angle (degrees)','FontSize',16,'FontName','Arial')
