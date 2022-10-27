@@ -32,9 +32,6 @@ neg_ch2_sum = [];
 pos_ch1_sum = [];
 pos_ch2_sum = [];
 
-median(neg_ch1{j}(:))
-median(neg_ch2{j}(:))
-
 % Image minus background (full image median). Fluorescent cells contribute to the
 % whole-image pixel intensity sum
 for j = 1:8
@@ -46,8 +43,8 @@ end
 
 % Compute fluorescence anisotropy for negative and positive control
 % samples. Here ch1 is perpendicular and ch2 is parallel
-r1 = (neg_ch2_sum-neg_ch1_sum)./(2*neg_ch1_sum+neg_ch2_sum);
-r2 = (pos_ch2_sum-pos_ch1_sum)./(2*pos_ch1_sum+pos_ch2_sum);
+r1 = (neg_ch2_sum-neg_ch1_sum)./(neg_ch1_sum+neg_ch2_sum);
+r2 = (pos_ch2_sum-pos_ch1_sum)./(pos_ch1_sum+pos_ch2_sum);
 
 %% Plotting
 
@@ -59,7 +56,7 @@ series1 = -[median(r1); median(r2)]+median(r1);
 series1error = [std(r1) std(r2)];
 labels = {'mNG','mNG-mNG'};
 
-c1 = [0 176 80]/255; c2 = [.6 .6 .6];c3 = [0 0 0]
+c1 = [0 176 80]/255; c2 = [.6 .6 .6];c3 = [0 0 0];
 b1 = bar(series1,0.5,'FaceColor',c1,'EdgeColor',c3,'LineWidth',1,'BaseValue',0);
 
 nbars = size(series1, 2);
@@ -80,4 +77,4 @@ set(gca,'LineWidth',2,'FontSize',16,'FontName','Arial')
 ylim([-.01 .04]);
 xlim([.25 2.75]);
 set(gca, 'XTick', 1:2, 'XTickLabel', labels);
-ylabel('-\Delta\itr','FontSize',16,'FontName','Arial')
+ylabel('-\DeltaFP','FontSize',16,'FontName','Arial')
