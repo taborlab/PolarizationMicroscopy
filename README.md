@@ -10,3 +10,5 @@ The whole-image pixel intensity sum values are then plotted for either fluoresce
 'Read_Agar_Images_final.m' is set up to compute and plot the whole-image fluorescence anisotropy difference between two samples. (8 fields per sample).
 
 'Display_Agar_images.m' reads and displays fluorescent cells from a selected file.
+
+Raw images are available as a set of 10 compressed folders. Filenames include 'processed', which indicates channel registration only.
