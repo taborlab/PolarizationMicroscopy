@@ -1,6 +1,6 @@
 # PolarizationMicroscopy
-An overview of how we measure fluorescence polarization in living cells
-Note: Fluorescence polarization and anisotropy represent the same property but are calculated slightly differenty:
+An overview of how we measure fluorescence polarization in living cells.
+Note: Fluorescence polarization and anisotropy represent the same property but are calculated slightly differently:
 polarization = (ch1 - ch2) / ch1 + ch2)
 anisotropy = (ch1 - ch2) / (ch1 + 2*ch2)
 
